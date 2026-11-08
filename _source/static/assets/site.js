@@ -1,6 +1,6 @@
 /* ---- Site settings: edit these before going live ---- */
 const SITE = {
-  email: "hello@example.com",        // TODO: company email
+  email: "info@techreliancemw.online",
   whatsapp: "",                       // TODO: international format without +, e.g. 2659XXXXXXXX
   timeZone: "Africa/Blantyre",
   // Supabase project "Tech-Reliance Web". The publishable key is safe in the browser:

@@ -16,8 +16,8 @@ A static multi-page site with no build step and no dependencies at runtime. Host
 
 ## Before going live
 
-1. In `assets/site.js`, set `SITE.email` and `SITE.whatsapp`.
-2. Replace `https://www.example.com` in each page's canonical tag, `sitemap.xml` and `robots.txt` with your domain. If you keep the generator, change `SITE_URL` in `build.py` and rebuild instead.
+1. In `assets/site.js` (source: `_source/static/assets/site.js`), set `SITE.whatsapp` to show the WhatsApp option.
+2. The live domain is set in `_source/build.py` (`SITE_URL`); change it there and rebuild if it ever moves.
 3. Read the Act section numbers against the Act text.
 
 ## Deploy on Vercel

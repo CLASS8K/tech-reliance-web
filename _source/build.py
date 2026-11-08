@@ -6,7 +6,7 @@ from jinja2 import Environment, FileSystemLoader
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.dirname(HERE)  # builds into the repo root
-SITE_URL = "https://www.example.com"  # TODO: set your live domain
+SITE_URL = "https://techreliancemw.online"
 
 PAGES = [
     # (template, output path, title, description, nav key)
