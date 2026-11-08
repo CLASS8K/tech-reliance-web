@@ -15,7 +15,7 @@ PAGES = [
     ("services.html", "services.html", "Services", "Exposure check, readiness sprint, DPO as a service, managed security, Microsoft 365 security and process automation.", "services"),
     ("svc_sprint.html", "services/readiness-sprint.html", "Readiness sprint", "A fixed-price, 4 to 6 week programme that makes your organisation compliant with Malawi's Data Protection Act 2024.", "services"),
     ("svc_dpo.html", "services/dpo-as-a-service.html", "DPO as a service", "An outsourced data protection officer for Malawian organisations, on a fixed monthly retainer.", "services"),
-    ("svc_security.html", "services/managed-security.html", "Managed security", "24/7 threat detection and response with a monthly review and a virtual CISO, priced per user.", "services"),
+    ("svc_security.html", "services/managed-security.html", "Managed security", "Continuous threat detection, coordinated incident response, a monthly review and a virtual CISO, priced per user.", "services"),
     ("svc_m365.html", "services/m365-security.html", "Microsoft 365 security", "A fixed-price review and hardening of your Microsoft 365 and Azure setup.", "services"),
     ("svc_automation.html", "services/process-automation.html", "Process automation", "Automate paper-heavy workflows with privacy built in, priced per workflow.", "services"),
     ("sectors.html", "sectors.html", "Sectors", "How the Data Protection Act affects microfinance, insurance, healthcare, education, NGOs and logistics in Malawi.", "sectors"),
@@ -28,7 +28,7 @@ PAGES = [
 SERVICES = [
     {"slug": "readiness-sprint", "name": "Readiness sprint", "short": "Map your data, close the gaps and file your MACRA registration.", "terms": "Fixed price, 4 to 6 weeks"},
     {"slug": "dpo-as-a-service", "name": "DPO as a service", "short": "We act as your data protection officer, month after month.", "terms": "Monthly retainer"},
-    {"slug": "managed-security", "name": "Managed security", "short": "24/7 detection and response, with a monthly review for your board.", "terms": "Per user, per month"},
+    {"slug": "managed-security", "name": "Managed security", "short": "Continuous threat detection, with a monthly review for your board.", "terms": "Per user, per month"},
     {"slug": "m365-security", "name": "Microsoft 365 security", "short": "Review and fix sign-in, email, sharing and device settings.", "terms": "Fixed price, 1 to 2 weeks"},
     {"slug": "process-automation", "name": "Process automation", "short": "Automate one paper-heavy workflow at a time, privacy built in.", "terms": "Priced per workflow"},
 ]
