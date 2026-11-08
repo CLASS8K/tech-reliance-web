@@ -1,0 +1,39 @@
+{% extends "_svc_base.html" %}
+{% block h1 %}Managed security: know about a breach in time to report it{% endblock %}
+{% block lede %}The Act gives you 72 hours from the moment you become aware of a breach. Most organisations find out weeks later, or never. We give you round-the-clock detection and response, with a monthly review your board can understand.{% endblock %}
+{% block slug %}managed-security{% endblock %}
+{% block get %}
+<ul class="ticks">
+  <li><strong>24/7 threat detection and response</strong> across laptops, servers and cloud accounts, run with a specialist security operations centre.</li>
+  <li><strong>Onboarding and tuning</strong> so alerts reflect real risk to your organisation, not noise.</li>
+  <li><strong>Incident coordination:</strong> when something happens, we lead the response and connect it to your breach plan.</li>
+  <li><strong>A monthly security report</strong> and review meeting.</li>
+  <li><strong>A virtual CISO:</strong> security advice for management and the board, without a full-time hire.</li>
+</ul>
+{% endblock %}
+{% block how %}
+<ol class="steps">
+  <li><strong>Security baseline</strong><span>We assess your current setup and agree what to monitor.</span></li>
+  <li><strong>Deploy</strong><span>Lightweight agents on your devices and connections to your cloud services. No hardware to buy.</span></li>
+  <li><strong>Tune</strong><span>Two to four weeks of adjusting detection to your environment.</span></li>
+  <li><strong>Run and review</strong><span>Continuous monitoring, with a monthly report and review meeting.</span></li>
+</ol>
+{% endblock %}
+{% block fit %}
+<ul class="ticks">
+  <li>You hold sensitive data and have no one watching your systems outside office hours.</li>
+  <li>Building your own security operations team would cost too much.</li>
+  <li>Your board, regulator or donors want evidence that you can detect attacks.</li>
+</ul>
+{% endblock %}
+{% block faq %}
+<details><summary>How is it priced?</summary><p>Per user or device per month, plus a fixed monthly fee for the virtual CISO review. You get the full price after the security baseline.</p></details>
+<details><summary>Where is our data stored?</summary><p>We agree data residency with you before deployment and record it in your transfer register, as the Act requires.</p></details>
+<details><summary>Do we need to replace our antivirus?</summary><p>Usually the monitoring agent replaces it. We confirm this during the baseline.</p></details>
+{% endblock %}
+{% block glance %}
+<div><dt>Coverage</dt><dd>24/7</dd></div>
+<div><dt>Price</dt><dd>Per user, per month</dd></div>
+<div><dt>Hardware</dt><dd>None to buy</dd></div>
+<div><dt>Reporting</dt><dd>Monthly review</dd></div>
+{% endblock %}

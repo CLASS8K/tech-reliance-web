@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ link('index.html') }}">Home</a> / Services</p>
+    <h1>Fixed-scope services for compliance and security</h1>
+    <p class="lede">Every service has an agreed scope and price before work begins. No hourly billing, no open-ended projects.</p>
+  </div>
+</div>
+
+<section aria-labelledby="ladder-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="ladder-title">The path most clients take</h2>
+      <p>Start with a free check. Each stage builds on the one before, and you can stop at any point.</p>
+    </div>
+    {% include "_ladder.html" %}
+  </div>
+</section>
+
+<section aria-labelledby="all-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="all-title">All services</h2>
+    </div>
+    <div class="svc-list">
+      {% for s in services %}
+      <a class="svc-row" href="{{ link('services/' ~ s.slug ~ '.html') }}">
+        <h3>{{ s.name }}</h3>
+        <p>{{ s.short }}</p>
+        <span class="t">{{ s.terms }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

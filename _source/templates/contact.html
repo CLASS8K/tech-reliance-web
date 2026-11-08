@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ link('index.html') }}">Home</a> / Contact</p>
+    <h1>Book a free exposure check</h1>
+    <p class="lede">Thirty minutes, ten questions, and a clear answer on where you stand against the Data Protection Act. No obligation.</p>
+  </div>
+</div>
+
+<section aria-label="Booking form">
+  <div class="wrap book">
+    <div class="book-copy">
+      <h2 class="h2">What happens next</h2>
+      <ol>
+        <li>You send this form.</li>
+        <li>We confirm a time by email or WhatsApp within one working day.</li>
+        <li>On the call you get a red, amber or green rating on registration, breach readiness, transfers and policies, and the single biggest risk to fix.</li>
+      </ol>
+      <p>Prefer email? Write to <a data-email href="#">us</a>.</p>
+    </div>
+
+    <form class="book-form" id="book-form" novalidate>
+      <div class="field">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" autocomplete="name" maxlength="120" required>
+      </div>
+      <div class="field">
+        <label for="f-org">Organisation</label>
+        <input id="f-org" name="organisation" autocomplete="organization" maxlength="160" required>
+      </div>
+      <div class="field">
+        <label for="f-email">Work email</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+      </div>
+      <div class="field">
+        <label for="f-phone">Phone or WhatsApp <span class="hint">(optional)</span></label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="+265">
+      </div>
+      <div class="field">
+        <label for="f-sector">Sector</label>
+        <select id="f-sector" name="sector">
+          <option>Microfinance or SACCO</option>
+          <option>Insurance or pensions</option>
+          <option>Healthcare</option>
+          <option>Education</option>
+          <option>NGO or donor programme</option>
+          <option>Logistics or trade</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-size">People whose data you hold</label>
+        <select id="f-size" name="data_subjects">
+          <option>Under 10,000</option>
+          <option selected>10,000 to 100,000</option>
+          <option>More than 100,000</option>
+          <option>Not sure</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="f-service">Interested in</label>
+        <select id="f-service" name="service">
+          <option value="exposure-check" selected>Free exposure check</option>
+          {% for s in services %}<option value="{{ s.slug }}">{{ s.name }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="field full">
+        <label for="f-msg">Anything we should know? <span class="hint">(optional)</span></label>
+        <textarea id="f-msg" name="message" maxlength="2000" placeholder="An audit coming up, a donor requirement, a recent incident"></textarea>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="f-website">Leave this empty</label>
+        <input id="f-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="field full">
+        <label class="check" for="f-consent"><input id="f-consent" name="consent" type="checkbox" value="yes"> <span>I agree that Tech-Reliance may use these details to arrange my call, as described in the <a href="{{ link('privacy.html') }}">privacy notice</a>.</span></label>
+      </div>
+      <p class="error field full" id="f-error" role="alert"></p>
+      <div class="form-actions">
+        <button class="btn" type="submit">Request my check</button>
+      </div>
+      <div class="result" id="result" tabindex="-1" role="status">
+        <div data-kind="sent" hidden>
+          <p><strong>Request received.</strong> We'll confirm a time within one working day.</p>
+        </div>
+        <div data-kind="fallback" hidden>
+          <p><strong>We couldn't send your request from this page.</strong> Your details are still in the form above. Send them with one tap instead:</p>
+          <div class="links">
+            <a class="btn small" id="send-email" href="#">Send by email</a>
+            <a class="btn small secondary" id="send-wa" href="#" hidden>Send on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

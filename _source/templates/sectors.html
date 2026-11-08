@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% set sectors = [
+  {"name": "Microfinance and SACCOs", "data": "Customer identities, loan histories, guarantor details, mobile money transaction records.", "risk": "Thin IT teams holding large customer bases, with many staff able to reach records and data often shared with mobile money partners.", "start": "Readiness sprint, then managed security for branch devices."},
+  {"name": "Insurers and pension funds", "data": "Policyholder and member records, beneficiaries, medical information for life and health cover.", "risk": "Health information is especially sensitive, and claims data moves between brokers, assessors and reinsurers, often abroad.", "start": "Readiness sprint with a focus on transfers and processor contracts."},
+  {"name": "Hospitals, clinics and labs", "data": "Patient records, test results, prescriptions, payment and insurance details.", "risk": "Exposed health data causes the most harm, and clinical systems are often old and shared across many staff.", "start": "Readiness sprint, Microsoft 365 security, then DPO as a service."},
+  {"name": "Universities and schools", "data": "Student and parent records, staff files, exam results and fee payments, including data on minors.", "risk": "Records on children need extra care, and admissions and fee systems are frequent targets.", "start": "Readiness sprint and staff awareness training."},
+  {"name": "NGOs and donor programmes", "data": "Beneficiary registers, household surveys, biometric or ID data, health and protection case files.", "risk": "Vulnerable people's data, field collection on personal phones, and donor systems hosted abroad.", "start": "Readiness sprint aligned to your donors' data requirements."},
+  {"name": "Logistics, clearing and trade", "data": "Client and consignee details, customs declarations, IDs and payment records.", "risk": "Documents passing through many hands and email inboxes, and data shared across borders.", "start": "Readiness sprint combined with process automation for document handling."}
+] %}
+{% block content %}
+<div class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ link('index.html') }}">Home</a> / Sectors</p>
+    <h1>How the Data Protection Act affects your sector</h1>
+    <p class="lede">The obligations are the same for everyone. The data, the risks and the right starting point are not.</p>
+  </div>
+</div>
+<section>
+  <div class="wrap">
+    {% for s in sectors %}
+    <article class="sector">
+      <h2>{{ s.name }}</h2>
+      <div class="body">
+        <dl>
+          <dt>Data you hold</dt><dd>{{ s.data }}</dd>
+          <dt>Where the risk is</dt><dd>{{ s.risk }}</dd>
+          <dt>Where to start</dt><dd>{{ s.start }}</dd>
+        </dl>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

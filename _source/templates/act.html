@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ link('index.html') }}">Home</a> / The Act</p>
+    <h1>The Data Protection Act 2024, explained for Malawian organisations</h1>
+    <p class="lede">The Act came into force on 3 June 2024. It applies to anyone processing personal data in Malawi, and MACRA enforces it as the Data Protection Authority. Here is what it asks of you, in plain terms.</p>
+    <div class="facts">
+      <span><strong>Regulator:</strong> MACRA</span>
+      <span><strong>Breach reporting:</strong> 72 hours</span>
+      <span><strong>Registration threshold:</strong> more than 10,000 data subjects</span>
+    </div>
+  </div>
+</div>
+
+<section aria-labelledby="ob-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="ob-title">The five obligations that catch most organisations</h2>
+      <p>The Act has many provisions. These five are where we find the biggest gaps.</p>
+    </div>
+    {% include "_register.html" %}
+  </div>
+</section>
+
+<section aria-labelledby="reg-title">
+  <div class="wrap split">
+    <div class="main">
+      <div class="block">
+        <h2 id="reg-title">Do you need to register with MACRA?</h2>
+        <p>You must register if you are a data controller or processor of significant importance. The Act defines that as an organisation domiciled in Malawi that processes the personal data of <strong>more than 10,000 data subjects</strong> in Malawi, or processes personal data of significance to the economy, society or security of Malawi.</p>
+        <p>Most banks, microfinance institutions, insurers, telcos, hospitals, universities, large schools and national NGOs will cross that line. Count customers, members, patients, students, staff and beneficiaries, past and present, whose records you still hold.</p>
+        <p>MACRA communicates acceptance or rejection within 14 days and issues a certificate that must be renewed. MACRA's July 2026 public notice sets out the registration fees, which are linked to annual turnover.</p>
+      </div>
+      <div class="block">
+        <h2>What happens when there is a breach</h2>
+        <p>A data controller must notify MACRA within 72 hours of becoming aware of a breach. If a processor, such as an IT provider or cloud vendor, suffers the breach, it must tell the controller within 72 hours. Where the breach poses a high risk to people's rights, the affected people must also be told. Every breach must be recorded.</p>
+        <p>In practice, the first 72 hours look like this:</p>
+        <ol class="steps">
+          <li><strong>Confirm and contain</strong><span>Stop the leak, preserve evidence, and start the clock from the moment you became aware.</span></li>
+          <li><strong>Assess the risk</strong><span>Whose data, what kind, how many people, and what harm could follow.</span></li>
+          <li><strong>Notify MACRA</strong><span>Within 72 hours, with what you know so far. Update as you learn more.</span></li>
+          <li><strong>Tell affected people</strong><span>Where the risk to them is high, explain what happened and what they should do.</span></li>
+          <li><strong>Record and fix</strong><span>Log the breach, the decisions and the fix, and close the gap that caused it.</span></li>
+        </ol>
+        <p class="small-note">This sequence is good practice for meeting the Act's deadlines. It is not a quotation of the Act.</p>
+      </div>
+      <div class="block">
+        <h2>Security, transfers and your DPO</h2>
+        <ul class="ticks">
+          <li><strong>Security (s.35).</strong> Put technical and organisational measures in place, such as pseudonymisation, encryption, regular risk assessments, and testing of those measures.</li>
+          <li><strong>Transfers abroad (s.38–40).</strong> Personal data may only leave Malawi where it stays adequately protected. If your email, CRM, backups or core system are hosted abroad, that is a transfer.</li>
+          <li><strong>Data protection officer.</strong> Organisations engaged in large-scale processing must appoint a DPO. MACRA's Data Protection Handbook sets out the role.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>Common questions</h2>
+        <div class="faq">
+          <details><summary>We have fewer than 10,000 customers. Does the Act still apply?</summary><p>Yes. Registration applies above the threshold, but the duties to process lawfully, keep data secure and report breaches apply to everyone processing personal data in Malawi.</p></details>
+          <details><summary>Our systems are run by an IT vendor. Who is responsible?</summary><p>You remain the controller and are accountable. Your vendor is a processor and has its own duties, including telling you about a breach within 72 hours. Your contract with them should say so.</p></details>
+          <details><summary>Is cloud hosting outside Malawi allowed?</summary><p>Yes, if the data stays adequately protected under sections 38 to 40. You need to know where data goes and have the right safeguards in place with each provider.</p></details>
+          <details><summary>Can our IT manager be the DPO?</summary><p>Often, yes, with training and enough independence, as long as there is no conflict with their other duties. Many organisations prefer an outsourced DPO for that reason.</p></details>
+        </div>
+      </div>
+    </div>
+    <aside class="side">
+      <div class="panel dark">
+        <h2>Not sure where you stand?</h2>
+        <p>Our free 30-minute exposure check covers registration, breach readiness, transfers and policies.</p>
+        <a class="btn on-dark" href="{{ link('contact.html') }}">Book a free check</a>
+      </div>
+      <div class="panel">
+        <h3>Primary sources</h3>
+        <p class="hint"><a href="https://cdh-malawi.com/wp-content/uploads/2025/09/Data-Protection-Act-2024.pdf">Data Protection Act 2024 (No. 3 of 2024)</a></p>
+        <p class="hint"><a href="https://macra.mw/wp-content/uploads/2026/07/REGISTRATION-FEES-PUBLIC-NOTICE-1.pdf">MACRA registration fees public notice, July 2026</a></p>
+        <p class="hint">This guide is compliance information, not legal advice.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

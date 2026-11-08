@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ link('index.html') }}">Home</a> / <a href="{{ link('services.html') }}">Services</a> / {{ title }}</p>
+    <h1>{% block h1 %}{% endblock %}</h1>
+    <p class="lede">{% block lede %}{% endblock %}</p>
+    <div class="actions">
+      <a class="btn" href="{{ link('contact.html') }}#{% block slug %}{% endblock %}">{% block cta %}Book a free exposure check{% endblock %}</a>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap split">
+    <div class="main">
+      <div class="block">
+        <h2>What you get</h2>
+        {% block get %}{% endblock %}
+      </div>
+      <div class="block">
+        <h2>How it works</h2>
+        {% block how %}{% endblock %}
+      </div>
+      <div class="block">
+        <h2>A good fit if</h2>
+        {% block fit %}{% endblock %}
+      </div>
+      <div class="block">
+        <h2>Common questions</h2>
+        <div class="faq">{% block faq %}{% endblock %}</div>
+      </div>
+    </div>
+    <aside class="side">
+      <div class="panel">
+        <h2>At a glance</h2>
+        <dl>{% block glance %}{% endblock %}</dl>
+      </div>
+      <div class="panel">
+        <h3>Related</h3>
+        {% for s in services %}{% if s.name != title %}<p class="hint"><a href="{{ link('services/' ~ s.slug ~ '.html') }}">{{ s.name }}</a>: {{ s.short }}</p>{% endif %}{% endfor %}
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if nav == 'home' %}{{ title }}{% else %}{{ title }} | Tech-Reliance{% endif %}</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#13493A">
+<link rel="icon" href="{{ link('favicon.svg') }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ link('assets/styles.css') }}">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="{{ link('index.html') }}">Tech-Reliance</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="{{ link('data-protection-act.html') }}"{% if nav == 'act' %} aria-current="page"{% endif %}>The Act</a>
+      <a href="{{ link('services.html') }}"{% if nav == 'services' %} aria-current="page"{% endif %}>Services</a>
+      <a href="{{ link('sectors.html') }}"{% if nav == 'sectors' %} aria-current="page"{% endif %}>Sectors</a>
+      <a href="{{ link('about.html') }}"{% if nav == 'about' %} aria-current="page"{% endif %}>About</a>
+      <a class="btn small" href="{{ link('contact.html') }}">Book a free check</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+
+{% if nav not in ['contact', 'none', 'privacy'] %}
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="wrap cta-inner">
+    <div>
+      <h2 id="cta-title">Find out where you stand in 30 minutes</h2>
+      <p>Ten questions, a clear red, amber or green answer, and no obligation.</p>
+    </div>
+    <a class="btn on-dark" href="{{ link('contact.html') }}">Book a free exposure check</a>
+  </div>
+</section>
+{% endif %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-brand">
+      <span class="wordmark">Tech-Reliance</span>
+      <p>Data protection and cybersecurity for regulated organisations in Malawi.</p>
+      <p data-contact-line></p>
+    </div>
+    <nav class="foot-col" aria-label="Services">
+      <p class="foot-h">Services</p>
+      {% for s in services %}<a href="{{ link('services/' ~ s.slug ~ '.html') }}">{{ s.name }}</a>{% endfor %}
+    </nav>
+    <nav class="foot-col" aria-label="Company">
+      <p class="foot-h">Company</p>
+      <a href="{{ link('data-protection-act.html') }}">The Act explained</a>
+      <a href="{{ link('sectors.html') }}">Sectors</a>
+      <a href="{{ link('about.html') }}">About</a>
+      <a href="{{ link('contact.html') }}">Contact</a>
+      <a href="{{ link('privacy.html') }}">Privacy notice</a>
+    </nav>
+    <p class="foot-legal">Tech-Reliance provides compliance advisory and security services. We are not a law firm, and nothing on this site is legal advice. © <span data-year>2026</span> Tech-Reliance.</p>
+  </div>
+</footer>
+<script src="{{ link('assets/site.js') }}"></script>
+</body>
+</html>
