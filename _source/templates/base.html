@@ -26,6 +26,7 @@
     <nav class="nav" id="site-nav" aria-label="Main">
       <a href="{{ link('data-protection-act.html') }}"{% if nav == 'act' %} aria-current="page"{% endif %}>The Act</a>
       <a href="{{ link('services.html') }}"{% if nav == 'services' %} aria-current="page"{% endif %}>Services</a>
+      <a href="{{ link('data-protection-kit.html') }}"{% if nav == 'kit' %} aria-current="page"{% endif %}>Templates</a>
       <a href="{{ link('sectors.html') }}"{% if nav == 'sectors' %} aria-current="page"{% endif %}>Sectors</a>
       <a href="{{ link('about.html') }}"{% if nav == 'about' %} aria-current="page"{% endif %}>About</a>
       <a class="btn small" href="{{ link('contact.html') }}">Book a free check</a>
@@ -36,7 +37,7 @@
 <main id="main">
 {% block content %}{% endblock %}
 
-{% if nav not in ['contact', 'none', 'privacy'] %}
+{% if nav not in ['contact', 'none', 'privacy', 'terms', 'kit'] %}
 <section class="cta-band" aria-labelledby="cta-title">
   <div class="wrap cta-inner">
     <div>
@@ -66,6 +67,8 @@
       <a href="{{ link('sectors.html') }}">Sectors</a>
       <a href="{{ link('about.html') }}">About</a>
       <a href="{{ link('contact.html') }}">Contact</a>
+      <a href="{{ link('data-protection-kit.html') }}">Data Protection Kit</a>
+      <a href="{{ link('terms.html') }}">Terms of sale</a>
       <a href="{{ link('privacy.html') }}">Privacy notice</a>
     </nav>
     <p class="foot-legal">Tech-Reliance provides compliance advisory and security services. We are not a law firm, and nothing on this site is legal advice. © <span data-year>2026</span> Tech-Reliance.</p>

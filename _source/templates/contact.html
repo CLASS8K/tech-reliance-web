@@ -63,6 +63,7 @@
         <select id="f-service" name="service">
           <option value="exposure-check" selected>Free exposure check</option>
           {% for s in services %}<option value="{{ s.slug }}">{{ s.name }}</option>{% endfor %}
+          <option value="data-protection-kit">Data Protection Kit (templates)</option>
         </select>
       </div>
       <div class="field full">

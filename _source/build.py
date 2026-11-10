@@ -21,9 +21,19 @@ PAGES = [
     ("sectors.html", "sectors.html", "Sectors", "How the Data Protection Act affects microfinance, insurance, healthcare, education, NGOs and logistics in Malawi.", "sectors"),
     ("about.html", "about.html", "About", "Tech-Reliance is led by Frank Ntaukira, a systems and security practitioner.", "about"),
     ("contact.html", "contact.html", "Book a free exposure check", "Book a free 30-minute Data Protection Act exposure check with Tech-Reliance.", "contact"),
+    ("kit.html", "data-protection-kit.html", "Pan-African Data Protection Kit", "Editable data protection compliance templates for 12 African countries: POPIA, NDPA, Kenya DPA, Egypt PDPL and more. Instant download.", "kit"),
+    ("terms.html", "terms.html", "Terms of sale", "Terms of sale, licence and refund policy for Tech-Reliance digital products.", "terms"),
     ("privacy.html", "privacy.html", "Privacy notice", "How Tech-Reliance handles personal data sent through this website.", "privacy"),
     ("404.html", "404.html", "Page not found", "This page does not exist.", "none"),
 ]
+
+# Dodo Payments checkout links for the kit. Leave empty until Dodo approves the
+# account; empty links show a "Request early access" button instead of "Buy".
+KIT_LINKS = {
+    "single": "",
+    "pan": "",
+    "consultant": "",
+}
 
 SERVICES = [
     {"slug": "readiness-sprint", "name": "Readiness sprint", "short": "Map your data, close the gaps and file your MACRA registration.", "terms": "Fixed price, 4 to 6 weeks"},
@@ -46,7 +56,7 @@ def main():
         canonical = SITE_URL + "/" + ("" if out == "index.html" else out.replace(".html", ""))
         html = env.get_template(tpl).render(
             title=title, description=desc, nav=nav, root=root, link=link,
-            services=SERVICES, canonical=canonical, page_path="/" + out.replace(".html", "").replace("index", ""))
+            services=SERVICES, kit_links=KIT_LINKS, canonical=canonical, page_path="/" + out.replace(".html", "").replace("index", ""))
         path = os.path.join(OUT, out)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
